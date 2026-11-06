@@ -2,7 +2,7 @@
 // generates from the paper's LaTeX source. Only the T01 trace below is transcribed by hand (Appendix E.2).
 
 // Fill these in when the paper, repository and dataset are public.
-const LINKS = { paper: "", code: "https://github.com/sidmanoharan/IntegrityBench", data: "" };
+const LINKS = { paper: "", code: "https://github.com/sidmanoharan/IntegrityBench", data: "https://huggingface.co/datasets/Integrity-Bench-anon/IntegrityBench" };
 
 const D = window.IB_DATA;
 const FAMILY_COLOR = { Sonnet: "#c96f4a", Haiku: "#c96f4a", GPT: "#2f8f6f", Gemini: "#3d6fd1", Qwen: "#7a4fc4", DeepSeek: "#3f5ea8" };

@@ -40,7 +40,7 @@ window.IB_DATA = {
     65.8,
     70.9
    ],
-   "overall": 70.4
+   "overall": 70.5
   },
   {
    "name": "Haiku 4.5",

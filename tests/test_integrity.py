@@ -108,3 +108,30 @@ def test_prepare_release_command(benchmark_csv, answer_key_csv, tmp_path, capsys
     key, ethical = read_answer_key_h5(str(out / "IntegrityBench_v1.0_answer_key.h5"))
     assert manifest["answer_key_sha256"] == key_digest(key, ethical)
     assert "dropped ground-truth columns: ['Misconduct Type']" in capsys.readouterr().out
+
+
+def test_download_verifies_checksums(benchmark_csv, answer_key_csv, tmp_path, monkeypatch):
+    import shutil
+    from integritybench import download as dl
+    public = str(tmp_path / "IntegrityBench_v1.0.csv")
+    write_public_benchmark(benchmark_csv, public)
+    key, ethical = read_answer_key_csv(answer_key_csv)
+    manifest = {"benchmark_file": "IntegrityBench_v1.0.csv", "benchmark_sha256": file_sha256(public),
+                "answer_key_file": "key.csv", "answer_key_sha256": key_digest(key, ethical),
+                "hf_dataset": "org/ds", "hf_answer_key_repo": "org/key"}
+    monkeypatch.setattr(dl, "load_manifest", lambda: manifest)
+    monkeypatch.setattr(integrity, "load_manifest", lambda: manifest)
+    sources = {"IntegrityBench_v1.0.csv": public, "key.csv": answer_key_csv}
+    calls = []
+
+    def fake_fetch(repo, filename, dest, token=None, revision="main"):
+        calls.append((repo, filename))
+        shutil.copy(sources[filename], dest)
+        return dest
+    monkeypatch.setattr(dl, "fetch", fake_fetch)
+    paths = dl.download(str(tmp_path / "data"), log=io.StringIO())
+    assert calls == [("org/ds", "IntegrityBench_v1.0.csv"), ("org/key", "key.csv")]
+    assert set(paths) == {"benchmark", "answer_key"}
+    sources["IntegrityBench_v1.0.csv"] = benchmark_csv  # a file that doesn't match the checksum
+    with pytest.raises(SystemExit, match="does not match"):
+        dl.download(str(tmp_path / "data2"), answer_key=False, log=io.StringIO())

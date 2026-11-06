@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use IntegrityBench, please cite the paper."
+title: "IntegrityBench: Can LLMs Be Trusted as Co-Scientists? A Research Integrity Benchmark"
+type: software
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: Manoharan Jayanthi
+    given-names: Sai Sidhanth
+    affiliation: University of California, Berkeley
+  - family-names: Tripathi
+    given-names: Yash
+    affiliation: Jaypee University of Information Technology
+  - family-names: Sharma
+    given-names: Silu
+    affiliation: New York University Shanghai
+  - family-names: Garg
+    given-names: Shivank
+    affiliation: IIT Roorkee
+  - family-names: Li
+    given-names: Lin
+    affiliation: University of Oxford
+preferred-citation:
+  type: conference-paper
+  title: "IntegrityBench: Can LLMs Be Trusted as Co-Scientists? A Research Integrity Benchmark"
+  collection-title: "Advances in Neural Information Processing Systems (Evaluations and Datasets Track)"
+  year: 2026
+  authors:
+    - family-names: Manoharan Jayanthi
+      given-names: Sai Sidhanth
+    - family-names: Tripathi
+      given-names: Yash
+    - family-names: Sharma
+      given-names: Silu
+    - family-names: Garg
+      given-names: Shivank
+    - family-names: Li
+      given-names: Lin

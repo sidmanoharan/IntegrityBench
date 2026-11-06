@@ -1,0 +1,12 @@
+# secrets, results and the answer key stay out of the public repo
+.env
+results/
+scores/
+*.meta.json
+*Answer*Key*
+*answer_key*
+__pycache__/
+*.egg-info/
+build/
+dist/
+.venv/

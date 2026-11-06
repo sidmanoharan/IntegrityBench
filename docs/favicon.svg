@@ -1,15 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- IntegrityBench: a shield (integrity) split into the benchmark's two task types,
-       purple for misconduct tasks and yellow for their ethical controls, with a check. -->
-  <defs>
-    <clipPath id="shield">
-      <path d="M32 4 L54 11.5 V29 C54 43.5 45 54 32 60 C19 54 10 43.5 10 29 V11.5 Z"/>
-    </clipPath>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="#16171b"/>
-  <g clip-path="url(#shield)">
-    <rect x="0" y="0" width="32" height="64" fill="#6a4c93"/>
-    <rect x="32" y="0" width="32" height="64" fill="#d9a521"/>
-  </g>
-  <path d="M21.5 32.5 L29 40 L43 25" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- IntegrityBench mark: a balance. The model under test (ringed, at the pivot) weighs a misconduct
+       task (purple) against its paired ethical control (gold); integrity means telling them apart. -->
+  <style>
+    .rule { fill: none; stroke: #979aa2; stroke-width: 2; stroke-linecap: round; }
+    .ink { fill: #16171b; } .ring { fill: none; stroke: #16171b; stroke-width: 1.7; }
+    @media (prefers-color-scheme: dark) { .ink { fill: #f1f1f4; } .ring { stroke: #f1f1f4; } .rule { stroke: #8a8d96; } }
+  </style>
+  <path class="rule" d="M16 12 V27.5 M10.5 27.5 H21.5 M4.8 14.5 H27.2"/>
+  <circle class="ring" cx="16" cy="7.6" r="4.8"/>
+  <circle class="ink" cx="16" cy="7.6" r="2.5"/>
+  <circle cx="5.2" cy="19.6" r="4.2" fill="#6a4c93"/>
+  <circle cx="26.8" cy="19.6" r="4.2" fill="#d9a521"/>
 </svg>

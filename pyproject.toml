@@ -7,7 +7,7 @@ name = "integritybench"
 version = "1.0.0"
 description = "IntegrityBench: evaluating research integrity of LLMs acting as co-scientists"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = { text = "MIT" }
 dependencies = ["requests>=2.31", "scipy>=1.10"]
 

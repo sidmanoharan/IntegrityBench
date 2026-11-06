@@ -14,7 +14,7 @@
 [Project page](https://sidmanoharan.github.io/IntegrityBench) · Paper and dataset links coming soon
 
 ![tests](https://github.com/sidmanoharan/IntegrityBench/actions/workflows/tests.yml/badge.svg)
-![python](https://img.shields.io/badge/python-3.9%2B-blue)
+![python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
 </div>
@@ -45,7 +45,7 @@ cd IntegrityBench
 pip install ".[h5]"
 ```
 
-Requires Python 3.9+. The `h5` extra is only needed to read the answer key.
+Requires Python 3.10+. The `h5` extra is only needed to read the answer key.
 
 ## Data
 
